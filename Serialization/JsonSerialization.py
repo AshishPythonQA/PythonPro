@@ -17,7 +17,7 @@ class StockData:
             for x in node:
                 # inner node is again in dictionary
                 for key, value in x.items():
-                    if str(value).lower() == stockname.lower():
+                    if str(value).lower().__contains__(stockname.lower()):
                         ltp = x["lastvalue"]
                         count += 1
         if count > 0:
