@@ -4,10 +4,10 @@ import urllib.request
 
 class StockData:
     def fetchStockltp(self, stockname, indice):
-       try:
+        try:
             ltp = 0
             count = 0
-            url = "https://appfeeds.moneycontrol.com/jsonapi/market/marketmap&format=&type=0&ind_id="+indice
+            url = "https://appfeeds.moneycontrol.com/jsonapi/market/marketmap&format=&type=0&ind_id=" + indice
             json_url = urllib.request.urlopen(url)
             jsondata = json.loads(json_url.read())
             # jsondata["item"] is in dictionary
@@ -26,5 +26,5 @@ class StockData:
             else:
                 return 0
 
-       except Exception as e:
-           print(str(e))
+        except Exception as e:
+            print(str(e))
