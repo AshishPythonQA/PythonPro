@@ -23,6 +23,8 @@ class winauto(object):
         except Exception as e:
             print("Error occured:")
             print(str(e))
+        else:
+            print("Else block will work only when there is no exception. But Finally block will execute all the times.")
         finally:
             driver.close()
 
