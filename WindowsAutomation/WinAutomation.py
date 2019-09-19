@@ -5,17 +5,28 @@ from pywinauto import keyboard, mouse
 from selenium import webdriver
 import time
 
+class winauto(object):
+    def automation(self):
+        try:
+            driver = webdriver.Firefox()
+            driver.get("https://www.seleniumhq.org/download/")
+            driver.maximize_window()
+            driver.find_element_by_xpath("//td[text()='Java']/..//*[contains(text(),'Download')]").click()
+            time.sleep(1)
+            # Handling windows based pop using pywinauto package.
+            keyboard.send_keys("{TAB}")
+            keyboard.send_keys("{TAB}")
+            time.sleep(1)
+            keyboard.send_keys("{TAB}")
+            keyboard.send_keys("{TAB}")
+            keyboard.send_keys("{ENTER}")
+        except Exception as e:
+            print("Error occured:")
+            print(str(e))
+        finally:
+            driver.close()
 
-driver = webdriver.Firefox()
-driver.get("https://www.seleniumhq.org/download/")
-driver.maximize_window()
-driver.find_element_by_xpath("//td[text()='Java']/..//*[contains(text(),'Download')]").click()
-time.sleep(1)
-# Handling windows based pop using pywinauto package.
-keyboard.send_keys("{TAB}")
-keyboard.send_keys("{TAB}")
-time.sleep(1)
-keyboard.send_keys("{TAB}")
-keyboard.send_keys("{TAB}")
-keyboard.send_keys("{ENTER}")
-driver.close()
+
+# Calling automation method by creating object of winauto.
+obj = winauto()
+obj.automation()
