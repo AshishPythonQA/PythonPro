@@ -1,5 +1,4 @@
 from Callers import Chapter1_Caller
-import time
 
 
 class SelBrowser:
