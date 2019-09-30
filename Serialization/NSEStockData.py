@@ -7,7 +7,7 @@ class JsonParser:
         count = 0
         pyobject = JsonSerialization.StockData()
         for x in range(1, 20):
-            ltp = pyobject.fetchStockltp("ADANIPOWER", str(x))
+            ltp = pyobject.fetchStockltp("SBI", str(x))
             if ltp != 0:
                 print(ltp)
                 break
