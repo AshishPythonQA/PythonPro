@@ -9,12 +9,12 @@ class ConnectDB:
     def oracleDB(self):
         global conn
         try:
-            conn = cx_Oracle.connect("username/username@host:1521/SID")
+            conn = cx_Oracle.connect("username/pwd@host:1521/SID")
             # The cursor returns the arrays. i.e columns will be fetched as arrays.
             cursor = conn.cursor()
-            cursor.execute("select * from tem_order_type where TYPE_ID = 9237")
+            cursor.execute("select * from tablename where columnname = 223")
             for row in cursor:
-                if str(row[3]).__contains__("Christmas Card Messaggi"):
+                if str(row[3]).__contains__("String"):
                     print("The length is %s" % len(row))
                     print(row)
         except Exception as e:
