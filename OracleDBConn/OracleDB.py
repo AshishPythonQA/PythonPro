@@ -9,7 +9,7 @@ class ConnectDB:
     def oracleDB(self):
         global conn
         try:
-            conn = cx_Oracle.connect("sysadm/sysadm@it002aia:1521/TEMMIG")
+            conn = cx_Oracle.connect("username/username@host:1521/SID")
             # The cursor returns the arrays. i.e columns will be fetched as arrays.
             cursor = conn.cursor()
             cursor.execute("select * from tem_order_type where TYPE_ID = 9237")
